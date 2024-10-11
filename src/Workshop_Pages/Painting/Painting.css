@@ -1,0 +1,11 @@
+.chover{
+    cursor: pointer;
+
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.chover:hover{
+    transform: scale(1.09);
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3); 
+}

@@ -1,0 +1,77 @@
+/* Slide in from the left */
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide in from the right */
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Add animation to the featurette images */
+.featurette-image {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.featurette-image.slide-left {
+  animation: slide-in-left 2s forwards; /* Trigger slide from left */
+}
+
+.featurette-image.slide-right {
+  animation: slide-in-right 2s forwards; /* Trigger slide from right */
+}
+
+/* Main heading styling */
+#main_margin {
+  margin-left: 5px;
+}
+
+.headin {
+  position: relative;
+  font-size: 2.5rem;
+  color: black;
+  margin: 1rem 0;
+  z-index: 10;
+}
+
+/* Styling for the brush shade image and text overlay */
+.brush-overlay {
+  display: inline-block;
+  position: relative;
+}
+
+.brush-shade {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-48%, -42%) scale(1.1) rotate(35deg);
+  z-index: -1;
+  opacity: 0.8;
+  width: 100%;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .headin {
+    font-size: 2rem;
+  }
+
+  .brush-shade {
+    transform: translate(-48%, -42%) scale(1.1) rotate(35deg);
+  }
+}

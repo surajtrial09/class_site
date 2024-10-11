@@ -1,0 +1,76 @@
+/* .image-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(8, 0, 58, 0.7), rgba(8, 0, 58, 0.7)), url(../../assets/customer_rev.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.module {
+  padding: 0;
+  text-align: center;
+}
+
+.counter {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: none; 
+}
+
+.counter-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.counter-number {
+  font-size: 28px;
+}
+
+.counter-title {
+  font-size: 18px;
+  color: #fff;
+} */
+
+
+
+
+
+
+
+
+/* Customer.css */
+
+.img-h{
+  height: 580px;
+}
+
+#carouselExampleAutoplaying {
+  max-width: 80%; /* Limit the width of the carousel */
+  margin: auto; /* Center the carousel */
+}
+
+.carousel-inner img {
+  width: 100%; /* Make images take full width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 400px; /* Set a max height to control image size */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Add a background color for better visibility */
+}
+
+@media (max-width: 768px) {
+  #carouselExampleAutoplaying {
+      max-width: 100%; /* Use full width on smaller screens */
+  }
+
+  .carousel-inner img {
+      max-height: 300px; /* Reduce max height on smaller screens */
+  }
+}
