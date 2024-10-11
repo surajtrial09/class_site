@@ -21,7 +21,7 @@ const Contact = () => {
                 <nav className="mb-3" aria-label="breadcrumb">
                   <ol className="breadcrumb breadcrumb-dots pt-0">
                     <li className="breadcrumb-item">
-                      <Link to="/art_class/">Home</Link>
+                      <Link to="class_site/">Home</Link>
                     </li>
                     <li className="breadcrumb-item active" aria-current="page">Contact us</li>
                   </ol>

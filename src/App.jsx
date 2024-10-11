@@ -47,7 +47,7 @@ const App = () => {
     <>
       <Routes>
         {/* Define routes for each page */}
-        <Route path="/" element={
+        <Route path="/class_site/" element={
           <>
             <Hero />
             <Curriculam />
@@ -60,31 +60,31 @@ const App = () => {
           </>
         } />
         {/* <Route path='/' element={<Home/>}/> */}
-        <Route path="/about" element={<About />} />
-        <Route path="/classes" element={<Classes />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/SignUp" element={<SignUp/>}/>
-        <Route path="/Formenroll" element={<Formenroll/>}/>
-        <Route path="/Forget" element={<Forget/>}/>
-        <Route path="/ceremic" element={<Ceremic />} />
-        <Route path="/workshop" element={<Workshop />} />
-        <Route path="/tutorial" element={<Tutorial />} />
-        <Route path="/painting" element={<Painting/>}/>
-        <Route path="/abstract" element={<Abstract/>}/>
-        <Route path="/clay" element={<Clay/>}/>
-        <Route path="/glass" element={<Glass/>}/>
-        <Route path="/landscapes" element={<Landscapes/>}/>
-        <Route path="/mixed_media" element={<Mixed_media/>}/>
-        <Route path="/mosaic" element={<Mosaic/>}/>
-        <Route path="/paper_craft" element={<Paper_craft/>}/>
-        <Route path="/sculpture" element={<Sculpture/>}/>
-        <Route path="/textile" element={<Textile/>}/>
-        <Route path="/waste" element={<Waste/>}/>
+        <Route path="/class_site/about" element={<About />} />
+        <Route path="/class_site/classes" element={<Classes />} />
+        <Route path="/class_site/contact" element={<Contact />} />
+        <Route path="/class_site/login" element={<Login/>}/>
+        <Route path="/class_site/SignUp" element={<SignUp/>}/>
+        <Route path="/class_site/Formenroll" element={<Formenroll/>}/>
+        <Route path="/class_site/Forget" element={<Forget/>}/>
+        <Route path="/class_site/ceremic" element={<Ceremic />} />
+        <Route path="/class_site/workshop" element={<Workshop />} />
+        <Route path="/class_site/tutorial" element={<Tutorial />} />
+        <Route path="/class_site/painting" element={<Painting/>}/>
+        <Route path="/class_site/abstract" element={<Abstract/>}/>
+        <Route path="/class_site/clay" element={<Clay/>}/>
+        <Route path="/class_site/glass" element={<Glass/>}/>
+        <Route path="/class_site/landscapes" element={<Landscapes/>}/>
+        <Route path="/class_site/mixed_media" element={<Mixed_media/>}/>
+        <Route path="/class_site/mosaic" element={<Mosaic/>}/>
+        <Route path="/class_site/paper_craft" element={<Paper_craft/>}/>
+        <Route path="/class_site/sculpture" element={<Sculpture/>}/>
+        <Route path="/class_site/textile" element={<Textile/>}/>
+        <Route path="/class_site/waste" element={<Waste/>}/>
         {/* foorer routes */}
-        <Route path="/FaqPage" element={<FaqPage/>}/>
-        <Route path="/Instructor" element={<Instructor/>}/>
-        <Route path="/Reviews" element={<Review/>}/>
+        <Route path="/class_site/FaqPage" element={<FaqPage/>}/>
+        <Route path="/class_site/Instructor" element={<Instructor/>}/>
+        <Route path="/class_site/Reviews" element={<Review/>}/>
       </Routes>
     </>
   );

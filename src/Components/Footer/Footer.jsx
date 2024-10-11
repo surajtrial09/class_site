@@ -31,7 +31,7 @@ const Footer = () => {
               >
                 <span className="btn-inner--text" style={{ color: 'black' }}>Documentation</span>
               </a>
-              <Link to="/Formenroll">
+              <Link to="/class_site/Formenroll">
                 <button
                   className="btn btn-primary my-2 ml-0 ml-sm-3"
                   id="enroll_btn"
@@ -81,29 +81,29 @@ const Footer = () => {
         <div className="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0" id="account_section">
           <h6 className="heading mb-3">Learn More</h6>
           <ul className="list-unstyled" id="account_links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/classes">Classes</Link></li>
-            <li><Link to="/FaqPage">FAQs</Link></li>
+            <li><Link to="/class_site/">Home</Link></li>
+            <li><Link to="/class_site/about">About</Link></li>
+            <li><Link to="/class_site/classes">Classes</Link></li>
+            <li><Link to="/class_site/FaqPage">FAQs</Link></li>
           </ul>
         </div>
         <div className="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0" id="about_section">
           <h6 className="heading mb-3">Get Involved</h6>
           <ul className="list-unstyled" id="about_links">
-            <li><Link to="/Formenroll">Enroll</Link></li>
-            <li><Link to="/Instructor">Instructors</Link></li>
-            <li><Link to="/contact">Events</Link></li>
-            <li><Link to="/Reviews">Reviews</Link></li>
+            <li><Link to="/class_site/Formenroll">Enroll</Link></li>
+            <li><Link to="/class_site/Instructor">Instructors</Link></li>
+            <li><Link to="/class_site/contact">Events</Link></li>
+            <li><Link to="/class_site/Reviews">Reviews</Link></li>
             {/* <li><Link to="/careers">Careers</Link></li> */}
           </ul>
         </div>
         <div className="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0" id="company_section">
           <h6 className="heading mb-3">Resources</h6>
           <ul className="list-unstyled" id="company_links">
-            <li><Link to="/community">Blog</Link></li>
-            <li><Link to="/help">Gallery</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/contact">Privacy</Link></li>
+            <li><Link to="/class_site/community">Blog</Link></li>
+            <li><Link to="/class_site/help">Gallery</Link></li>
+            <li><Link to="/class_site/contact">Contact</Link></li>
+            <li><Link to="/class_site/contact">Privacy</Link></li>
           </ul>
         </div>
       </div>
@@ -116,9 +116,9 @@ const Footer = () => {
         </div>
         <div className="col-md-6">
           <ul className="nav justify-content-center justify-content-md-end mt-3 mt-md-0" id="footer_links">
-            <li className="nav-item"><Link className="nav-link" to="/terms">Terms</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/privacy">Privacy</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/cookies">Cookies</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/class_site/terms">Terms</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/class_site/privacy">Privacy</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/class_site/cookies">Cookies</Link></li>
           </ul>
         </div>
       </div>

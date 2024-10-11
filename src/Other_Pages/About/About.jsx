@@ -18,12 +18,12 @@ const About = () => {
               "Our art classes inspire creativity and self-expression through hands-on exploration of various mediums and techniques. We provide a supportive environment for all skill levels. Join us to unleash your artistic potential and bring your vision to life!"
             </p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3" id="about-buttons">
-              <Link to="/Formenroll">
+              <Link to="/class_site/Formenroll">
               <button type="button" className="btn btn-primary btn-lg px-4 me-md-2 fw-bold" id="enroll-button">
                 Enroll Now
               </button>
               </Link>
-              <Link to="/contact">
+              <Link to="/class_site/contact">
               <button type="button" className="btn btn-outline-secondary btn-lg px-4" id="contact-button">
                 Contact Us
               </button>

@@ -24,7 +24,7 @@ const Login = () => {
                     <h1 className="mb-0 fw-bold">Sign in</h1>
                     <span>
                       Don’t have an account?
-                      <Link to="/SignUp">
+                      <Link to="/class_site/SignUp">
                       <a href="SignUp.jsx" id="sign-up-link" className="ms-1">Sign up</a>
                       </Link>
                     </span>
@@ -52,7 +52,7 @@ const Login = () => {
                       <div className="invalid-feedback">You must agree before submitting.</div>
                     </div>
                     <div>
-                    <Link to="/Forget">
+                    <Link to="/class_site/Forget">
                       <a id="forgot-password-link">Forgot your password?</a>
                       </Link>
                     </div>

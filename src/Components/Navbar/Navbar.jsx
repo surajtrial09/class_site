@@ -49,31 +49,31 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNavDropdown" ref={collapseRef}>
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <Link className="nav-link active" to="/">HOME</Link>
+              <Link className="nav-link active" to="/class_site/">HOME</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/about">ABOUT US</Link>
+              <Link className="nav-link active" to="/class_site/about">ABOUT US</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/classes">CLASSES</Link>
+              <Link className="nav-link active" to="/class_site/classes">CLASSES</Link>
             </li>
             <li className="nav-item dropdown">
               <Link className="nav-link active dropdown-toggle" data-bs-toggle="dropdown" to="#" role="button" aria-expanded="false">
                 ART WORKSHOPS
               </Link>
               <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/workshop">Our Art Workshop</Link></li>
-                <li><Link className="dropdown-item" to="/tutorial">Workshop Tutorial</Link></li>
+                <li><Link className="dropdown-item" to="/class_site/workshop">Our Art Workshop</Link></li>
+                <li><Link className="dropdown-item" to="/class_site/tutorial">Workshop Tutorial</Link></li>
               </ul>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/contact">CONTACT</Link>
+              <Link className="nav-link active" to="/class_site/contact">CONTACT</Link>
             </li>
           </ul>
 
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link to="/login">
+              <Link to="/class_site/login">
                 <button id="login_btn" type="button" className="btn btn-outline-dark">
                   LOG IN
                 </button>

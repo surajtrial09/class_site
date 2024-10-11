@@ -32,7 +32,7 @@ const Hero = () => {
           <div className="flexColStart secondaryText flexhero-des">
             <span>Find your way of living by dipping into arts</span>
             <span>Forget all difficulties in finding a creative life</span>
-            <Link to='/about' className="custom-link">
+            <Link to='/class_site/about' className="custom-link">
   <div id="about-us">
     About Us
     <span id='arrow_gap'>
