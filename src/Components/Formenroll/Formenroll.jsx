@@ -13,11 +13,7 @@ const Formenroll = () => {
     course: '',
     parentName: '',
     relation: '',
-    parentEmail: '',
-    parentPhone: '',
-    homeAddress: '',
     schoolName: '',
-    board: '',
     classGrade: '', // New field for course selection
   });
 
@@ -202,41 +198,7 @@ const Formenroll = () => {
             />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="parentEmail">Email</label>
-            <input
-              type="email"
-              id="parentEmail"
-              name="parentEmail"
-              value={formData.parentEmail}
-              onChange={handleChange}
-              required
-            />
-          </div>
 
-          <div className="form-group">
-            <label htmlFor="parentPhone">Phone Number</label>
-            <input
-              type="tel"
-              id="parentPhone"
-              name="parentPhone"
-              value={formData.parentPhone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="homeAddress">Home Address</label>
-            <input
-              type="text"
-              id="homeAddress"
-              name="homeAddress"
-              value={formData.homeAddress}
-              onChange={handleChange}
-              required
-            />
-          </div>
         </div>
 
         {/* Education Details Section */}

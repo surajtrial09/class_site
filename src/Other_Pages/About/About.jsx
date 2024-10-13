@@ -3,14 +3,23 @@ import './About.css';
 import about_img from '../../assets/about_img.jpg';
 import teacher from '../../assets/art_teacher.jpeg';
 import FAQSection from './FAQSection'; // Import the FAQSection component
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
+import {motion} from 'framer-motion';
+import {fadeIn} from '../../variant.js'
+
+
 
 const About = () => {
   return (
     <>
       <div className="container my-5" id="about-container">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="about-row">
-          <div className="col-lg-7 p-3 p-lg-5 pt-lg-3" id="about-text">
+          <motion.div
+          variants={fadeIn("right",0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{once:false,amount:0.7}}
+          className="col-lg-7 p-3 p-lg-5 pt-lg-3" id="about-text">
             <h1 className="display-4 fw-light lh-1 text-body-emphasis" id="about-heading">
               Our Art Class is a Creative Centre, which is dedicated to teaching and involving learners.
             </h1>
@@ -30,7 +39,7 @@ const About = () => {
               </Link>
               
             </div>
-          </div>
+          </motion.div>
           <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg" id="about-image">
             <img className="rounded-lg-3" src={about_img} alt="Art Class" width="720" />
           </div>

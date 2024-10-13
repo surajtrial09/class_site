@@ -20,7 +20,7 @@ const Art_area = () => {
         <div className="row mx-lg-n4">
           {features.map((feature, index) => (
             <div className="col-lg-4 col-md-6 px-lg-4 square" key={index}>
-              <Link to={`/class_site/${feature.link}`} className="card-link">
+              <Link to={`/class_site${feature.link}`} className="card-link">
                 <div className="card">
                   <div className="p-3 d-flex">
                     <div>

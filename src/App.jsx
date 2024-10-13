@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css'
-import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import ScrollToTop from './ScrollToTop';
+import { Routes, Route } from 'react-router-dom'; // 
 import Hero from './Components/Hero/Hero';
 import Curriculam from './Components/Curriculam/Curriculam';
 import Pricing from './Components/Pricing/Pricing';
@@ -45,8 +46,10 @@ import Review from './FooterPages/Review/Review';
 const App = () => {
   return (
     <>
+    <ScrollToTop/>
       <Routes>
         {/* Define routes for each page */}
+        
         <Route path="/class_site/" element={
           <>
             <Hero />

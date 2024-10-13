@@ -70,6 +70,9 @@
   .headin {
     font-size: 2rem;
   }
+  .featurette-heading fw-normal lh-1{
+    font-size: 3rem;
+  }
 
   .brush-shade {
     transform: translate(-48%, -42%) scale(1.1) rotate(35deg);
