@@ -100,10 +100,10 @@ const Footer = () => {
         <div className="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0" id="company_section">
           <h6 className="heading mb-3">Resources</h6>
           <ul className="list-unstyled" id="company_links">
-            <li><Link to="/class_site/community">Blog</Link></li>
+            <li><Link to="/class_site/Blog">Blog</Link></li>
             <li><Link to="/class_site/help">Gallery</Link></li>
             <li><Link to="/class_site/contact">Contact</Link></li>
-            <li><Link to="/class_site/contact">Privacy</Link></li>
+            <li><Link to="/class_site/Privacy">Privacy</Link></li>
           </ul>
         </div>
       </div>

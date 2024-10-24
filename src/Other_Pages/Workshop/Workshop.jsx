@@ -14,6 +14,7 @@ import mix from '../../assets/work_shop/media-mix.gif';
 import sculpture from '../../assets/work_shop/sculpture.gif';
 import mosaic from '../../assets/work_shop/mosaic.gif';
 import abstract from '../../assets/work_shop/abstract.gif';
+import quilling from '../../assets/work_shop/quilling.gif';
 
 const Workshop = () => {
   return (
@@ -44,7 +45,7 @@ const Workshop = () => {
           </Link>
         </div>
 
-        <div className="feature col">
+        {/* <div className="feature col">
           <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
             <img src={ceremic} alt="Ceramic Work" className="feature-icon-img" />
           </div>
@@ -54,7 +55,7 @@ const Workshop = () => {
             Explore Ceramic Work
             <svg className="bi"><use xlinkHref="#chevron-right"></use></svg>
           </Link>
-        </div>
+        </div> */}
 
         <div className="feature col">
           <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
@@ -104,7 +105,7 @@ const Workshop = () => {
           </Link>
         </div>
 
-        <div className="feature col">
+        {/* <div className="feature col">
           <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
             <img src={textile} alt="Textile Art" className="feature-icon-img" />
           </div>
@@ -114,7 +115,7 @@ const Workshop = () => {
             Explore Textile Arts
             <svg className="bi"><use xlinkHref="#chevron-right"></use></svg>
           </Link>
-        </div>
+        </div> */}
 
         <div className="feature col">
           <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
@@ -130,12 +131,12 @@ const Workshop = () => {
 
         <div className="feature col">
           <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-            <img src={sculpture} alt="Sculpture" className="feature-icon-img" />
+            <img src={quilling} alt="Sculpture" className="feature-icon-img" />
           </div>
-          <h3 className="fs-2 text-body-emphasis">Sculpture</h3>
-          <p>Bring your ideas to life with our sculpture classes, where you'll work with materials like clay, metal, and wood to create three-dimensional art pieces. Learn techniques for carving, modeling, and assembling sculptures.</p>
+          <h3 className="fs-2 text-body-emphasis">Quilling</h3>
+          <p>Quilling art is a beautiful paper craft that involves rolling, shaping, and gluing strips of paper to create intricate designs. This delicate and vibrant art form allows for endless creativity.</p>
           <Link to="/class_site/sculpture" className="icon-link">
-            Explore Sculptures
+            Explore Quilling
             <svg className="bi"><use xlinkHref="#chevron-right"></use></svg>
           </Link>
         </div>
@@ -145,14 +146,14 @@ const Workshop = () => {
             <img src={mosaic} alt="Mosaic Art" className="feature-icon-img" />
           </div>
           <h3 className="fs-2 text-body-emphasis">Mosaic Art</h3>
-          <p>Delve into the intricate world of mosaic art, combining small pieces of glass, stone, or tile to create beautiful, detailed designs. Our classes will guide you through the process of planning, cutting, and assembling your mosaic artwork.</p>
+          <p>Delve into the world of mosaic art, combining small pieces of glass, stone, or tile to create detailed designs. We guide you through the process of planning, cutting, and assembling your mosaic artwork.</p>
           <Link to="/class_site/mosaic" className="icon-link">
             Explore Mosaic Arts
             <svg className="bi"><use xlinkHref="#chevron-right"></use></svg>
           </Link>
         </div>
 
-        <div className="feature col">
+        {/* <div className="feature col">
           <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
             <img src={abstract} alt="Abstract Art" className="feature-icon-img" />
           </div>
@@ -162,7 +163,7 @@ const Workshop = () => {
             Explore Abstract Arts
             <svg className="bi"><use xlinkHref="#chevron-right"></use></svg>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

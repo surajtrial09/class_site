@@ -1,65 +1,53 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 import './Curriculam.css';
 import small_std from '../../assets/small_child.jpg';
 import mod_std from '../../assets/moderate_child.jpg';
-import senior from '../../assets/exp_student.jpg'
-import senior_exp from '../../assets/seno.jpg'
+import senior from '../../assets/exp_student.jpg';
+import senior_exp from '../../assets/seno.jpg';
 import brush_shade from '../../assets/brush_shade.png';
 
+const courseVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0 },
+};
 
 const Curriculam = () => {
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const images = document.querySelectorAll('.featurette-image');
-      const windowHeight = window.innerHeight;
-
-      images.forEach((image, index) => {
-        const imageTop = image.getBoundingClientRect().top;
-        if (imageTop < windowHeight - 100) {
-          if (index % 2 === 0) {
-            image.classList.add('slide-left');  // Slide from left for even index
-          } else {
-            image.classList.add('slide-right'); // Slide from right for odd index
-          }
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <main id='main_margin'>
       <hr className="featurette-divider" />
-      <h1 className="headin">
-        <span className="brush-overlay">
-          <img src={brush_shade} alt="Brush Shade" className="brush-shade" />
+      <h1 id="curriculam-heading">
+        <span id="brush-overlay">
+          <img src={brush_shade} alt="Brush Shade" id="brush-shade" />
           Curriculam
         </span>
       </h1>
 
-      <div className="row featurette">
+      {/* Junior Beginner Section */}
+      <motion.div
+        className="row featurette"
+        initial="hidden"
+        whileInView="visible"
+        variants={courseVariants}
+        transition={{ duration: 0.5 }}
+      >
         <div className="col-md-7">
-          <h2 className="featurette-heading fw-normal lh-1">Junior Begineer(4-8 Years) <span className="text-body-secondary">Course Start With</span></h2>
-          <p className="lead ">
+          <h2 id="course-title">Junior Beginner (4-8 Years) <span id="course-start">Course Starts With</span></h2>
+          <p className="lead">
             <ul>
-              <li>Understanding of Lines and Pattern</li>
-              <li>Understanding of Shapes and Form</li>
+              <li>Understanding of Lines and Patterns</li>
+              <li>Understanding of Shapes and Forms</li>
               <li>Introduction to Abstract</li>
               <li>Curved Line and Pattern</li>
             </ul>
             <h5>And Gradually Move to</h5>
             <ul>
-              <li>Colour Study, Shading and Bleending</li>
+              <li>Colour Study, Shading and Blending</li>
               <li>Handling of Point, Brushes and Colours</li>
-              <li>Study of Curve line object</li>
-              <li>Motor Skill development Activity using form of Art</li>
+              <li>Study of Curve Line Objects</li>
+              <li>Motor Skill Development Activity using Art</li>
             </ul>
-            <h5><span className="text-body-secondary">Course Duration: 1 Year</span><span className="text-body-secondary">No. Of Sessions: 96</span></h5>
+            <h5><span id="course-duration">Course Duration:1 Year</span><span id="sessions-number">No.Of Sessions: 96</span></h5>
           </p>
         </div>
         <div className="col-md-5">
@@ -71,26 +59,33 @@ const Curriculam = () => {
             height="500"
           />
         </div>
-      </div>
+      </motion.div>
 
       <hr className="featurette-divider" />
 
-      <div className="row featurette">
+      {/* Junior Learner Section */}
+      <motion.div
+        className="row featurette"
+        initial="hidden"
+        whileInView="visible"
+        variants={courseVariants}
+        transition={{ duration: 0.5 }}
+      >
         <div className="col-md-7 order-md-2">
-          <h2 className="featurette-heading fw-normal lh-1">Junior Learner(9-15 Years) <span className="text-body-secondary">Course Start With</span></h2>
+          <h2 id="course-title">Junior Learner (9-12 Years)<span id="course-title">Course Starts With</span></h2>
           <p className="lead">
             <h5>The Children are Ready to Learn these Things</h5>
             <ul>
-              <li>Basics of pencil sketching and shading</li>
-              <li>Basics of live object drawing</li>
-              <li>Basics of watercolours and poster colours</li>
-              <li>Still life drawing</li>
-              <li>Composite drawing</li>
-              <li>Styles of various art masters-art history</li>
-              <li>Basics of glass paints, colour pencils, soft pastels</li>
+              <li>Basics of Pencil Sketching and Shading</li>
+              <li>Basics of Live Object Drawing</li>
+              <li>Basics of Watercolours and Poster Colours</li>
+              <li>Still Life Drawing</li>
+              <li>Composite Drawing</li>
+              <li>Styles of Various Art Masters - Art History</li>
+              <li>Basics of Glass Paints, Colour Pencils, Soft Pastels</li>
               <li>Traditional Art, Mahbubani Art, etc.</li>
             </ul>
-            <h5><span className="text-body-secondary">Course Duration: 1 Year</span><span className="text-body-secondary">No. Of Sessions: 96</span></h5>
+            <h5><span id="course-duration">Course Duration: 1 Year  </span><span id="sessions-number">No.Of Sessions: 96</span></h5>
           </p>
         </div>
         <div className="col-md-5 order-md-1">
@@ -102,24 +97,31 @@ const Curriculam = () => {
             height="500"
           />
         </div>
-      </div>
+      </motion.div>
 
       <hr className="featurette-divider" />
 
-      <div className="row featurette">
+      {/* Senior Seeker Section */}
+      <motion.div
+        className="row featurette"
+        initial="hidden"
+        whileInView="visible"
+        variants={courseVariants}
+        transition={{ duration: 0.5 }}
+      >
         <div className="col-md-7">
-          <h2 className="featurette-heading fw-normal lh-1">Senior Seeker(12-15 Years) <span className="text-body-secondary">Course Start With</span></h2>
+          <h2 id="course-title">Senior Seeker (12-15 Years) <span id="course-start">Course Starts With</span></h2>
           <p className="lead">
             <h5>The Children are Ready to Learn these Things</h5>
             <ul>
               <li>Basic Knowledge of Painting</li>
               <li>Introduction of Mixed Media Arts</li>
-              <li>Introduction of Different types of Clay Arts</li>
-              <li>Traditional Art-Basic Worli, Mithila, Gond Arts</li>
+              <li>Introduction of Different Types of Clay Arts</li>
+              <li>Traditional Art - Basic Worli, Mithila, Gond Arts</li>
               <li>Advanced Glass Painting, Acrylics, Colour Pencils</li>
               <li>Fabric Painting and Lippan Art</li>
             </ul>
-            <h5><span className="text-body-secondary">Course Duration: 1 Year</span><span className="text-body-secondary">No. Of Sessions: 96</span></h5>
+            <h5><span id="course-duration">Course Duration: 1 Year  </span><span id="sessions-number">No.Of Sessions: 96</span></h5>
           </p>
         </div>
         <div className="col-md-5 order-md-1">
@@ -131,26 +133,33 @@ const Curriculam = () => {
             height="500"
           />
         </div>
-      </div>
+      </motion.div>
 
       <hr className="featurette-divider" />
 
-      <div className="row featurette">
+      {/* Senior Expressor Section */}
+      <motion.div
+        className="row featurette"
+        initial="hidden"
+        whileInView="visible"
+        variants={courseVariants}
+        transition={{ duration: 0.5 }}
+      >
         <div className="col-md-7 order-md-2">
-          <h2 className="featurette-heading fw-normal lh-1">Senior Expressors(16+ Years) <span className="text-body-secondary">Course Start With</span></h2>
+          <h2 id="course-title">Senior Expressors (16+ Years) <span id="course-start">Course Starts With</span></h2>
           <p className="lead">
-            <h5>Students have the necessary Knowledge of Art</h5>
+            <h5>Students have the Necessary Knowledge of Art</h5>
             <ul>
-              <li>Different types of Canvas Painting</li>
-              <li>Pencil Shading with help of Shading tools</li>
+              <li>Different Types of Canvas Painting</li>
+              <li>Pencil Shading with Help of Shading Tools</li>
               <li>Grid Knowledge</li>
               <li>Soft Pastel Painting</li>
               <li>Knife Painting</li>
               <li>Fabric Painting</li>
               <li>Clay Work with Hand</li>
-              <li>Origami Arts and Various type of Craft Work</li>
+              <li>Origami Arts and Various Types of Craft Work</li>
             </ul>
-            <h5><span className="text-body-secondary">Course Duration: 1 Year</span><span className="text-body-secondary">No. Of Sessions: 96</span></h5>
+            <h5><span id="course-duration">Course Duration: 1 Year </span><span id="sessions-number">No.Of Sessions: 96</span></h5>
           </p>
         </div>
         <div className="col-md-5 order-md-1">
@@ -162,7 +171,7 @@ const Curriculam = () => {
             height="500"
           />
         </div>
-      </div>
+      </motion.div>
       <hr className="featurette-divider" />
     </main>
   );

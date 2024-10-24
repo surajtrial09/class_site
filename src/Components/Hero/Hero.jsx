@@ -5,7 +5,6 @@ import './Hero.css';
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 import front_img from '../../assets/classes/front_main_image.jpeg'
-import { VscNoNewline } from 'react-icons/vsc';
 
 const Hero = () => {
   return (

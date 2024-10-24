@@ -1,0 +1,55 @@
+#art-page-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#art-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#title {
+    font-size: 3rem;
+    color: #333;
+}
+
+#description {
+    font-size: 1.4rem;
+    color: #777;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+@media screen and (max-width: 1024px) {
+    #title {
+        font-size: 2.5rem;
+    }
+
+    #description {
+        font-size: 1.2rem;
+    }
+
+    #art-page-container {
+        padding: 15px;
+    }
+
+    [id^="art-row-"] {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    #image1, #image2, #image3, #image4, #image5, #image6, #image7 {
+        width: 100% !important;
+    }
+
+    #description-container-1, #description-container-2, #description-container-3,
+    #description-container-4, #description-container-5, #description-container-6, #description-container-7 {
+        width: 100% !important;
+    }
+
+    [id^="image-description"] {
+        text-align: center !important;
+    }
+}

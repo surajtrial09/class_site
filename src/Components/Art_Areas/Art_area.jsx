@@ -52,10 +52,11 @@ const features = [
   { title: "Landscapes", bgColor: "primary", link: "/landscapes" },
   { title: "Paper Craft", bgColor: "danger", link: "/paper_craft" },
   { title: "Clay Work", bgColor: "success", link: "/clay" },
-  { title: "Ceramic Work", bgColor: "info", link: "/ceremic" },
+  { title: "Quilling", bgColor: "info", link: "/ceremic" },
   { title: "Glass Painting", bgColor: "warning", link: "/glass" },
-  { title: "Fabric Paint", bgColor: "info", link: "/textile" },
+  { title: "Mosaic Art", bgColor: "info", link: "/textile" },
   { title: "Best Out of Waste", bgColor: "primary", link: "/waste" },
+  { title: "Mixed Media", bgColor: "success", link: "/mixed_media" },
 ];
 
 export default Art_area;

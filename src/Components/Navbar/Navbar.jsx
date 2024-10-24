@@ -1,10 +1,23 @@
-import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import main_logo from '../../assets/main_logo.png';
-import './Navbar.css';
+import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import main_logo from "../../assets/main_logo.png";
+import "./Navbar.css";
+import { useUser } from "../../Context/UserContext";
 
 const Navbar = () => {
+  // console.log(useUser(),'USERR');
+  // const [, forceUpdate] = React.useReducer(x => x + 1, 0);
   const collapseRef = useRef(null); // Reference to the collapse section
+  const { state, dispatch } = useUser();
+  // useEffect(
+  //   () => console.log(state, "State CHanged"),
+  //   [dispatch, state, state?.isAuthenticated]
+  // );
+  // console.log(useUser(),'USER');
+
+  // useEffect(() => {
+  //   dispatch({ type: "GET_USER" });
+  // }, []);
 
   useEffect(() => {
     const collapseElement = collapseRef.current;
@@ -13,18 +26,22 @@ const Navbar = () => {
     // Add event listener to handle auto-close after 5 seconds
     const handleTogglerClick = () => {
       timeoutId = setTimeout(() => {
-        if (collapseElement.classList.contains('show')) {
-          collapseElement.classList.remove('show');
+        if (collapseElement.classList.contains("show")) {
+          collapseElement.classList.remove("show");
         }
       }, 3000); // 5 seconds timeout
     };
 
     // Add click event listener to the toggler button
-    document.querySelector('.navbar-toggler').addEventListener('click', handleTogglerClick);
+    document
+      .querySelector(".navbar-toggler")
+      .addEventListener("click", handleTogglerClick);
 
     // Cleanup event listener and timeout on component unmount
     return () => {
-      document.querySelector('.navbar-toggler').removeEventListener('click', handleTogglerClick);
+      document
+        .querySelector(".navbar-toggler")
+        .removeEventListener("click", handleTogglerClick);
       clearTimeout(timeoutId);
     };
   }, []);
@@ -33,7 +50,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src={main_logo} alt="Site Logo" style={{ height: '40px' }} />
+          <img src={main_logo} alt="Site Logo" style={{ height: "40px" }} />
         </Link>
         <button
           className="navbar-toggler"
@@ -46,38 +63,80 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown" ref={collapseRef}>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavDropdown"
+          ref={collapseRef}
+        >
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <Link className="nav-link active" to="/class_site/">HOME</Link>
+              <Link className="nav-link active" to="/class_site/">
+                HOME
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/class_site/about">ABOUT US</Link>
+              <Link className="nav-link active" to="/class_site/about">
+                ABOUT US
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/class_site/classes">CLASSES</Link>
+              <Link className="nav-link active" to="/class_site/classes">
+                CLASSES
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link className="nav-link active dropdown-toggle" data-bs-toggle="dropdown" to="#" role="button" aria-expanded="false">
+              <Link
+                className="nav-link active dropdown-toggle"
+                data-bs-toggle="dropdown"
+                to="#"
+                role="button"
+                aria-expanded="false"
+              >
                 ART WORKSHOPS
               </Link>
               <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/class_site/workshop">Our Art Workshop</Link></li>
-                <li><Link className="dropdown-item" to="/class_site/tutorial">Workshop Tutorial</Link></li>
+                <li>
+                  <Link className="dropdown-item" to="/class_site/workshop">
+                    Our Art Workshop
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/class_site/tutorial">
+                    Workshop Tutorial
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/class_site/contact">CONTACT</Link>
+              <Link className="nav-link active" to="/class_site/contact">
+                CONTACT
+              </Link>
             </li>
           </ul>
 
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link to="/class_site/login">
-                <button id="login_btn" type="button" className="btn btn-outline-dark">
-                  LOG IN
-                </button>
-              </Link>
+              {!state?.user?.fullName ? (
+                <Link to="/class_site/login">
+                  <button
+                    id="login_btn"
+                    type="button"
+                    className="btn btn-outline-dark"
+                  >
+                    LOG IN
+                  </button>
+                </Link>
+              ) : (
+                <Link to="/class_site/profile">
+                  <button
+                    id="login_btn"
+                    type="button"
+                    className="btn btn-outline-dark"
+                  >
+                    {state?.user?.fullName}
+                  </button>
+                </Link>
+              )}
             </li>
           </ul>
         </div>

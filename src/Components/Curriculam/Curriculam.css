@@ -23,10 +23,10 @@
 }
 
 /* Add animation to the featurette images */
-.featurette-image {
+/* .featurette-image {
   opacity: 0;
   transition: opacity 1s ease-out;
-}
+} */
 
 .featurette-image.slide-left {
   animation: slide-in-left 2s forwards; /* Trigger slide from left */
@@ -41,40 +41,69 @@
   margin-left: 5px;
 }
 
-.headin {
+#curriculam-heading {
   position: relative;
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* Default font size */
   color: black;
   margin: 1rem 0;
   z-index: 10;
 }
 
 /* Styling for the brush shade image and text overlay */
-.brush-overlay {
+#brush-overlay {
   display: inline-block;
   position: relative;
 }
 
-.brush-shade {
+#brush-shade {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-48%, -42%) scale(1.1) rotate(35deg);
-  z-index: -1;
-  opacity: 0.8;
-  width: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2; /* Adjust this value to control visibility */
 }
 
-/* Adjustments for responsiveness */
+/* Course title styling */
+#course-title {
+  font-size: 1.5rem; /* Default font size */
+}
+
+/* Course details and duration styling */
+#course-duration, #sessions-number {
+  font-size: 1.2rem; /* Adjusted font size */
+}
+
+/* Media queries for responsive design */
 @media (max-width: 768px) {
-  .headin {
-    font-size: 2rem;
-  }
-  .featurette-heading fw-normal lh-1{
-    font-size: 3rem;
+  #curriculam-heading {
+    font-size: 2rem; /* Adjust font size for smaller screens */
   }
 
-  .brush-shade {
-    transform: translate(-48%, -42%) scale(1.1) rotate(35deg);
+  #course-title {
+    font-size: 1.25rem; /* Adjust font size for course titles */
+  }
+
+  #course-duration, #sessions-number {
+    font-size: 1rem; /* Adjust font size for course duration and session number */
+  }
+
+  .lead {
+    font-size: 0.9rem; /* Adjust font size for lead text */
+  }
+}
+
+/* Adjust layout for mobile devices */
+@media (max-width: 576px) {
+  #curriculam-heading {
+    font-size: 1.75rem; /* Further adjust for extra small devices */
+  }
+
+  #course-title {
+    font-size: 1.1rem; /* Further adjust for course titles */
+  }
+
+  .featurette-image {
+    width: 100%; /* Make images full width */
+    height: auto; /* Keep aspect ratio */
   }
 }

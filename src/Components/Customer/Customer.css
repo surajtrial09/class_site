@@ -1,76 +1,132 @@
-/* .image-container {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(rgba(8, 0, 58, 0.7), rgba(8, 0, 58, 0.7)), url(../../assets/customer_rev.jpg);
+/* Full container styling */
+#stats-section {
+  position: relative;
+  background-image: url('/src/assets/customer/customer2.jpg'); /* Replace with your background image */
   background-size: cover;
   background-position: center;
-  color: white;
+  height: 100vh; /* Full height */
   display: flex;
-  align-items: flex-end;
   justify-content: center;
-  padding-bottom: 20px;
+  align-items: center;
 }
 
-.module {
-  padding: 0;
+/* Overlay to create the dark effect */
+#stats-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main content container */
+#stats-content {
+  color: white;
   text-align: center;
-}
-
-.counter {
   padding: 20px;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Main heading */
+#main-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
   margin-bottom: 20px;
-  background: none; 
+  color: #ffffff; /* White for heading */
+  font-family: 'Poppins', sans-serif; /* Use a modern sans-serif font */
 }
 
-.counter-icon {
-  font-size: 40px;
-  margin-bottom: 10px;
+/* Description text */
+#description {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: white; /* Light gray for description */
+  font-family: 'Roboto', sans-serif; /* Different font for description */
 }
 
-.counter-number {
-  font-size: 28px;
+/* Stats grid layout */
+#stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  position: relative;
 }
 
-.counter-title {
-  font-size: 18px;
-  color: #fff;
-} */
-
-
-
-
-
-
-
-
-/* Customer.css */
-
-.img-h{
-  height: 580px;
+/* Vertical lines between stats */
+#stats-grid::before, 
+#stats-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #ffffff;
+  opacity: 0.5;
+  z-index: 1;
 }
 
-#carouselExampleAutoplaying {
-  max-width: 80%; /* Limit the width of the carousel */
-  margin: auto; /* Center the carousel */
+#stats-grid::before {
+  left: 33.33%; /* Line between first and second stat */
 }
 
-.carousel-inner img {
-  width: 100%; /* Make images take full width */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 400px; /* Set a max height to control image size */
+#stats-grid::after {
+  left: 66.66%; /* Line between second and third stat */
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5); /* Add a background color for better visibility */
+/* Individual stat item */
+#stat-item {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 20px; /* Add padding to avoid text touching the line */
+  z-index: 2; /* Ensure content is above lines */
 }
 
+/* Stat number */
+#stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff; /* Use a light blue for numbers to pop */
+  font-family: 'Poppins'; /* Modern sans-serif font */
+  margin-bottom: 5px;
+}
+
+/* Stat description */
+#stat-description {
+  font-size: 1rem;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0.8; /* Slight opacity to give it a subtle look */
+}
+
+/* Responsive styling */
 @media (max-width: 768px) {
-  #carouselExampleAutoplaying {
-      max-width: 100%; /* Use full width on smaller screens */
+  #main-heading {
+    font-size: 2rem;
   }
 
-  .carousel-inner img {
-      max-height: 300px; /* Reduce max height on smaller screens */
+  #stat-number {
+    font-size: 1.5rem;
+  }
+
+  #description {
+    font-size: 0.9rem;
+  }
+
+  /* Remove vertical lines on small screens and prevent them from occupying space */
+  #stats-grid::before, 
+  #stats-grid::after {
+    display: none;
   }
 }

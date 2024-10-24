@@ -1,10 +1,29 @@
-import React from 'react';
-import './Forget.css'; // Import CSS file for styling
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
+import React, { useState } from "react";
+import "./Forget.css"; // Import CSS file for styling
+import { Link, useNavigate } from "react-router-dom"; // Import Link from react-router-dom for navigation
+import axios from "axios";
 
 const Forgot = () => {
+  const [email, setEmail] = useState("");
+  const Navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("submitted");
+    const res = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/user/forget-password`,
+      { email: email }
+    );
+    if (res?.data?.success) {
+      Navigate("/class_site/verify-otp", {
+        state: email,
+      });
+    }
+  };
   return (
-    <sectionf id="forgot-password-container" className="container d-flex flex-column vh-100">
+    <sectionf
+      id="forgot-password-container"
+      className="container d-flex flex-column vh-100"
+    >
       <div className="row align-items-center justify-content-center g-0 h-lg-100 py-8">
         <div className="col-lg-5 col-md-8 py-8 py-xl-0">
           {/* Card */}
@@ -21,10 +40,16 @@ const Forgot = () => {
                 </div>
               </div>
               {/* Form */}
-              <form className="needs-validation" noValidate>
+              <form
+                className="needs-validation"
+                noValidate
+                onSubmit={handleSubmit}
+              >
                 {/* Email */}
                 <div className="mb-3">
-                  <label htmlFor="forgetEmail" className="form-label">Email</label>
+                  <label htmlFor="forgetEmail" className="form-label">
+                    Email
+                  </label>
                   <input
                     type="email"
                     id="forgetEmail"
@@ -32,16 +57,27 @@ const Forgot = () => {
                     name="forgetEmail"
                     placeholder="Enter Your Email"
                     required
+                    onChange={(e) => setEmail(e.target.value)}
                   />
-                  <div className="invalid-feedback">Please enter a valid email.</div>
+                  <div className="invalid-feedback">
+                    Please enter a valid email.
+                  </div>
                 </div>
                 {/* Button */}
                 <div className="mb-3 d-grid">
-                  <button type="submit" className="btn btn-primary" id='resetbtn'>Send Reset Link</button>
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    id="resetbtn"
+                  >
+                    Send Reset Link
+                  </button>
                 </div>
                 <span>
-                  Return to{' '}
-                  <Link to="/class_site/login" className="signin-link">sign in</Link>
+                  Return to{" "}
+                  <Link to="/class_site/login" className="signin-link">
+                    sign in
+                  </Link>
                 </span>
               </form>
             </div>
@@ -53,4 +89,3 @@ const Forgot = () => {
 };
 
 export default Forgot;
-

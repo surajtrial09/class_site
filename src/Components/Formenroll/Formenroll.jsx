@@ -1,42 +1,80 @@
-import React, { useState } from 'react';
-import './Formenroll.css'; // Assuming you have this CSS file for styling
+import React, { useEffect, useState } from "react";
+import "./Formenroll.css"; // Assuming you have this CSS file for styling
+import { useUser } from "../../Context/UserContext";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Formenroll = () => {
+  const Navigate = useNavigate();
+  const { state } = useUser();
+  // console.log(state);
+  const [courses, setCourses] = useState([]);
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    gender: '',
-    dob: '',
-    email: '',
-    phone: '',
-    address: '',
-    course: '',
-    parentName: '',
-    relation: '',
-    schoolName: '',
-    classGrade: '', // New field for course selection
+    fullName: "",
+    gender: "",
+    dob: "",
+    // email: "",
+    phone: "",
+    address: "",
+    course: "",
+    parentName: "",
+    relation: "",
+    schoolName: "",
+    classGrade: "", // New field for course selection
+    courseDetail: "",
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (e.target.name === "course") {
+      setFormData((prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value,
+        courseDetail: courses?.find(
+          (elem) => elem.courseName === e.target.value
+        ),
+      }));
+    } else {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add form submission logic here
+    console.log("Form submitted:", formData);
+    await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/user/enroll-user`,
+      formData
+    );
   };
+
+  useEffect(() => {
+    if (state?.user === null) {
+      Navigate("/class_site/login");
+    } else {
+      const fetchCourses = async () => {
+        const res = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/admin/get-course`
+        );
+        setCourses(res?.data?.CoursesData);
+      };
+      fetchCourses();
+    }
+  }, []);
+
+  useEffect(() => console.log(formData), [formData]);
 
   return (
     <div id="enroll-form">
       <h2 className="mb-3">Apply for Admission</h2>
       <p>
-        You can apply online by filling up the form below or{' '}
+        You can apply online by filling up the form below or{" "}
         <a href="#">Download a pdf</a> and submit. Any questions related to the
-        admission process, please contact our admission office at{' '}
+        admission process, please contact our admission office at{" "}
         <a>+91 8130011848</a> or <a>taraartclass@gmail.com</a>.
       </p>
-      <p className="mb-1">Before you proceed with the form, please read the following topics:</p>
+      <p className="mb-1">
+        Before you proceed with the form, please read the following topics:
+      </p>
       <ul className="ps-3 undd">
         <li>Application fee is Rs.0/-</li>
         <li>Fees are non-refundable</li>
@@ -44,20 +82,20 @@ const Formenroll = () => {
       <form onSubmit={handleSubmit}>
         {/* Student Details Section */}
         <div id="student-details">
-        <h2 className="mb-4">Personal Information</h2>
+          <h2 className="mb-4">Personal Information</h2>
           <div className="form-group">
-            <label htmlFor="firstName">First Name</label>
+            <label htmlFor="firstName">Full Name</label>
             <input
               type="text"
               id="firstName"
-              name="firstName"
-              value={formData.firstName}
+              name="fullName"
+              value={formData.fullName}
               onChange={handleChange}
               required
             />
           </div>
 
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="lastName">Last Name</label>
             <input
               type="text"
@@ -67,7 +105,7 @@ const Formenroll = () => {
               onChange={handleChange}
               required
             />
-          </div>
+          </div> */}
 
           <div className="form-group">
             <label>Gender</label>
@@ -122,8 +160,8 @@ const Formenroll = () => {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={state?.user?.userEmail}
+              disabled
               required
             />
           </div>
@@ -158,22 +196,22 @@ const Formenroll = () => {
           <select
             id="course"
             name="course"
-            value={formData.course}
+            value={formData?.course}
             onChange={handleChange}
             required
           >
             <option value="">Select a course</option>
-            <option value="Junior Beginner">Junior Beginner</option>
-            <option value="Junior Learner">Junior Learner</option>
-            <option value="Senior Seeker">Senior Seeker</option>
-            <option value="Senior Expressor">Senior Expressor</option>
-            <option value="Special Class">Special Class</option>
+            {courses?.map((elem) => {
+              return (
+                <option value={elem?.courseName}>{elem?.courseName}</option>
+              );
+            })}
           </select>
         </div>
 
         {/* Parent Details Section */}
         <div id="parent-details">
-        <h2 className="mb-4">Parent's Details</h2>
+          <h2 className="mb-4">Parent's Details</h2>
           <div className="form-group">
             <label htmlFor="parentName">Full Name</label>
             <input
@@ -197,13 +235,11 @@ const Formenroll = () => {
               required
             />
           </div>
-
-
         </div>
 
         {/* Education Details Section */}
         <div id="education-details">
-        <h2 className="mb-4">Education</h2>
+          <h2 className="mb-4">Education</h2>
           <div className="form-group">
             <label htmlFor="schoolName">School or College Name</label>
             <input
@@ -242,7 +278,6 @@ const Formenroll = () => {
         </div>
 
         {/* New Select Course Section */}
-
 
         {/* Submit Button */}
         <button type="submit" id="submit-btn">
