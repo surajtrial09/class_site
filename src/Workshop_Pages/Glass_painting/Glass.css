@@ -1,55 +1,82 @@
-#art-page-container {
+/* Container */
+#galleryContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-items: center;
 }
-
-#art-heading {
+/* Individual gallery item */
+[id^="galleryItem-"] {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f4f4f4;
     text-align: center;
-    margin-bottom: 50px;
+    transition: transform 0.4s ease;
 }
 
-#title {
-    font-size: 3rem;
+/* Image styling */
+[id^="galleryImage-"] {
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+    transition: transform 0.4s ease;
+}
+
+/* Info container */
+[id^="galleryInfo-"] {
+    padding: 12px 20px;
+}
+
+/* Title styling */
+[id^="imageTitle-"] {
+    font-size: 1.4rem;
+    margin: 12px 0;
     color: #333;
 }
 
-#description {
-    font-size: 1.4rem;
-    color: #777;
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.8;
+/* Description styling */
+[id^="imageDescription-"] {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 8px;
 }
 
-@media screen and (max-width: 1024px) {
-    #title {
-        font-size: 2.5rem;
-    }
+/* Additional text styling */
+[id^="imageAdditionalText-"] {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 6px;
+}
 
-    #description {
-        font-size: 1.2rem;
-    }
+/* Responsive design */
+@media (max-width: 900px) {
+  #galleryContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
 
-    #art-page-container {
-        padding: 15px;
-    }
+@media (max-width: 600px) {
+  #galleryContainer {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
 
-    [id^="art-row-"] {
-        flex-direction: column !important;
-        text-align: center;
-    }
+  [id^="galleryItem-"] {
+    max-width: 100%;
+  }
 
-    #image1, #image2, #image3, #image4, #image5, #image6, #image7 {
-        width: 100% !important;
-    }
+  [id^="imageTitle-"] {
+    font-size: 1.2rem;
+  }
 
-    #description-container-1, #description-container-2, #description-container-3,
-    #description-container-4, #description-container-5, #description-container-6, #description-container-7 {
-        width: 100% !important;
-    }
-
-    [id^="image-description"] {
-        text-align: center !important;
-    }
+  [id^="imageDescription-"],
+  [id^="imageAdditionalText-"] {
+    font-size: 1rem;
+  }
 }

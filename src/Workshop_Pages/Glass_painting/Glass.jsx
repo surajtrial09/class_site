@@ -11,13 +11,13 @@ import paint7 from '../../assets/Paintings/paint7.jpg';
 
 const Glass = () => {
   const artworks = [
-    { id: 1, src: paint1, alt: 'Art 1', description: 'A breathtaking sunset over mountain peaks.' },
-    { id: 2, src: paint2, alt: 'Art 2', description: 'A peaceful river flowing through dense forest.' },
-    { id: 3, src: paint3, alt: 'Art 3', description: 'A vibrant cityscape under the moonlight.' },
-    { id: 4, src: paint4, alt: 'Art 4', description: 'A calm beach with soft waves and golden sand.' },
-    { id: 5, src: paint5, alt: 'Art 5', description: 'A colorful field of wildflowers in bloom.' },
-    { id: 6, src: paint6, alt: 'Art 6', description: 'A leaf with intricate details and textures.' },
-    { id: 7, src: paint7, alt: 'Art 7', description: 'An abstract painting with bold colors and shapes.' }
+    {id: 1, src: paint1, alt: 'Art 1', description: 'A breathtaking sunset over mountain peaks.' },
+    {id: 2, src: paint2, alt: 'Art 2', description: 'A peaceful river flowing through dense forest.' },
+    {id: 3, src: paint3, alt: 'Art 3', description: 'A vibrant cityscape under the moonlight.' },
+    {id: 4, src: paint4, alt: 'Art 4', description: 'A calm beach with soft waves and golden sand.' },
+    {id: 5, src: paint5, alt: 'Art 5', description: 'A colorful field of wildflowers in bloom.' },
+    {id: 6, src: paint6, alt: 'Art 6', description: 'A leaf with intricate details and textures.' },
+    {id: 7, src: paint7, alt: 'Art 7', description: 'An abstract painting with bold colors and shapes.' }
   ];
 
   return (
@@ -48,14 +48,14 @@ const Glass = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-100px" }} // triggers animation on scroll
+          viewport={{ once: true, margin: "-100px" }} 
         >
           <motion.img
             id={`image${artwork.id}`}
             src={artwork.src}
             alt={artwork.alt}
             style={{
-              width: '48%', // reduced size by 20%
+              width: '48%',
               height: 'auto',
               borderRadius: '10px',
               boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)'

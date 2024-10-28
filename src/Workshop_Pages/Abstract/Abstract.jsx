@@ -1,5 +1,7 @@
 import React from 'react';
 import './Abstract.css'; 
+import { motion } from 'framer-motion';
+
 import paint1 from '../../assets/Paintings/paint1.jpg'
 import paint2 from '../../assets/Paintings/paint2.jpg'
 import paint3 from '../../assets/Paintings/paint3.jpg'
@@ -10,124 +12,79 @@ import paint7 from '../../assets/Paintings/paint7.jpg'
 import paint8 from '../../assets/Paintings/paint8.jpg'
 import paint9 from '../../assets/Paintings/paint9.jpg'
 
-
-
-
 const Abstract = () => {
+  const images = [
+    {
+      id: 'image1',
+      src: paint1,
+      title: 'Art Piece One',
+      description: 'This is a description of Art Piece One.',
+      additionalText: 'This is additional information about Art Piece One. It discusses the inspiration behind the artwork, techniques used, and other interesting details.',
+    },
+    {
+      id: 'image2',
+      src: paint2,
+      title: 'Art Piece Two',
+      description: 'This is a description of Art Piece Two.',
+      additionalText: 'This is additional information about Art Piece Two. It highlights the artist’s vision, challenges encountered, and significance of the artwork.',
+    },
+    {
+      id: 'image3',
+      src: paint3,
+      title: 'Art Piece Three',
+      description: 'This is a description of Art Piece Three.',
+      additionalText: 'This is additional information about Art Piece Three. It gives an insight into the story behind the piece and the emotions it aims to convey.',
+    },
+    {
+      id: 'image3',
+      src: paint3,
+      title: 'Art Piece Three',
+      description: 'This is a description of Art Piece Three.',
+      additionalText: 'This is additional information about Art Piece Three. It gives an insight into the story behind the piece and the emotions it aims to convey.',
+    },
+    {
+      id: 'image3',
+      src: paint3,
+      title: 'Art Piece Three',
+      description: 'This is a description of Art Piece Three.',
+      additionalText: 'This is additional information about Art Piece Three. It gives an insight into the story behind the piece and the emotions it aims to convey.',
+    },
+    {
+      id: 'image3',
+      src: paint3,
+      title: 'Art Piece Three',
+      description: 'This is a description of Art Piece Three.',
+      additionalText: 'This is additional information about Art Piece Three. It gives an insight into the story behind the piece and the emotions it aims to convey.',
+    },
+    
+  ];
+
   return (
-    <div className="container px-4 py-5" id="custom-cards">
-      <h2 className="pb-2 border-bottom">Abstract</h2>
-
-      <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        {/* First card */}
-        <div className="col" >
-          <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg chover">
-            <img
-              src={paint1}
-              alt="Painting 1"
-              className="card-img"
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
+    <div id="galleryContainer">
+      {images.map((image) => (
+        <motion.div
+          key={image.id}
+          id={`galleryItem-${image.id}`}
+          className="galleryItem"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <img id={`galleryImage-${image.id}`} src={image.src} alt={image.title} className="galleryImage" />
+          <div id={`galleryInfo-${image.id}`} className="galleryInfo">
+            <h3 id={`imageTitle-${image.id}`} className="imageTitle">{image.title}</h3>
+            <p id={`imageDescription-${image.id}`} className="imageDescription">{image.description}</p>
+            <p id={`imageAdditionalText-${image.id}`} className="imageAdditionalText">{image.additionalText}</p>
           </div>
-        </div>
-
-        {/* Second card */}
-        <div className="col">
-          <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg chover" >
-            <img
-              src={paint2}
-              alt="Painting 2"
-              className="card-img"
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
-          </div>
-        </div>
-
-        <div className="col">
-          <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg chover">
-            <img
-              src={paint3}
-              alt="Painting 1"
-              className="card-img"
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
-          </div>
-        </div>
-
-        {/* Second card */}
-        <div className="col">
-          <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg chover">
-            <img
-              src={paint4}
-              alt="Painting 2"
-              className="card-img"
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
-          </div>
-        </div>
-
-        <div className="col">
-          <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg chover">
-            <img
-              src={paint5}
-              alt="Painting 1"
-              className="card-img"
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
-          </div>
-        </div>
-
-        {/* Second card */}
-        <div className="col">
-          <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg chover">
-            <img
-              src={paint6}
-              alt="Painting 2"
-              className="card-img"
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
-          </div>
-        </div>
-
-        <div className="col">
-          <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg chover">
-            <img
-              src={paint7}
-              alt="Painting 1"
-              className="card-img"
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
-          </div>
-        </div>
-
-        {/* Second card */}
-        <div className="col">
-          <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg chover">
-            <img
-              src={paint8}
-              alt="Painting 2"
-              className="card-img"
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
-          </div>
-        </div>
-
-        {/* Third card */}
-        <div className="col">
-          <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg chover">
-            <img
-              src={paint9}
-              alt="Painting 3"
-              className="card-img"
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
-          </div>
-        </div>
-      </div>
+        </motion.div>
+      ))}
     </div>
   );
 };
 
 export default Abstract;
+
 
 

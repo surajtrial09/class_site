@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import './Intro.css';
-import { Link as ScrollLink } from "react-scroll"; // For scroll links
 import { Link } from "react-router-dom"; // For page navigation
 import Vector1 from '../../assets/img/Vector1.png'
 import Vector2 from '../../assets/img/Vector2.png'
+import m_boy from '../../assets/img/m_boy.png'
 import boy from "../../assets/img/boy.png";
 import glassesimoji from "../../assets/img/glassesimoji.png";
 import thumbup from "../../assets/img/thumbup.png";
