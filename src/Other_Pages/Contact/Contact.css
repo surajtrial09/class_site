@@ -48,7 +48,7 @@ img {
 @media (max-width: 576px) {
     #form-cont {
         margin-top: -9px;
-        width: 100%; /* Full width on small screens */
+        width: 108%; /* Full width on small screens */
     }
 
     /* Make input fields and buttons full-width on smaller screens */

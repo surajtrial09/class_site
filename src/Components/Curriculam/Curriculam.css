@@ -57,10 +57,10 @@
 
 #brush-shade {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.2; /* Adjust this value to control visibility */
+  transform: translate(-50%, -50%)rotate(38deg);
+  opacity: 0.6; /* Adjust this value to control visibility */
 }
 
 /* Course title styling */

@@ -65,11 +65,11 @@ const Blog = () => {
                 </div>
 
                 <aside id="blog-sidebar">
-                    <h2>Related Posts</h2>
+                    <h2>Related Search</h2>
                     <ul>
-                        <li><a href="#blog-post-4">Understanding Color Theory</a></li>
-                        <li><a href="#blog-post-5">Mastering Brush Techniques</a></li>
-                        <li><a href="#blog-post-6">Exploring Abstract Art</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Art#:~:text=Art%20provides%20a%20way%20to,appreciates%20art%2C%20music%20or%20poetry.&text=Expression%20of%20the%20imagination.">Exploring About the A-R-T-</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Color_theory">Understanding Color Theory</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Brush">Mastering Brush Techniques</a></li>
                     </ul>
                 </aside>
             </div>

@@ -18,7 +18,7 @@ const Curriculam = () => {
       <hr className="featurette-divider" />
       <h1 id="curriculam-heading">
         <span id="brush-overlay">
-          <img src={brush_shade} alt="Brush Shade" id="brush-shade" />
+          {/* <img src={brush_shade} alt="Brush Shade" id="brush-shade" /> */}
           Curriculam
         </span>
       </h1>

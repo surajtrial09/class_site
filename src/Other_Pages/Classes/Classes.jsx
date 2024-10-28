@@ -64,8 +64,9 @@ const Classes = () => {
         <div className="card p-3">
           <p>Find the perfect class that fits your schedule:</p>
           <ul>
-            <li><strong>Weekly Schedule:</strong> Classes are held on weekdays at various times.</li>
+            <li><strong>Weekly Schedule:</strong> Classes are held on Saturday and Sunday at various times.</li>
             <li><strong>Weekend Workshops:</strong> Intensive weekend sessions for focused learning.</li>
+            <li><strong>Doubt </strong>Clear Instantly through Whatsapp</li>
           </ul>
         </div>
       </sectionclas>
@@ -92,8 +93,8 @@ const Classes = () => {
         <h2>Class Formats</h2>
         <div className="card p-3">
           <ul>
-            <li><strong>In-Studio Classes:</strong> Conducted in a studio environment with materials provided.</li>
-            <li><strong>Online Classes:</strong> Live or recorded sessions for at-home learning.</li>
+            <li><strong>Offline Classes:</strong> Conducted in the class with materials provided .</li>
+            <li><strong>Online Classes:</strong> Live classes through Zoom Meeting.</li>
           </ul>
         </div>
       </sectionclas>

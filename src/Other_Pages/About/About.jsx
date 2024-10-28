@@ -2,10 +2,10 @@ import React from 'react';
 import './About.css';
 import about_img from '../../assets/about_img.jpg';
 import teacher from '../../assets/art_teacher.jpeg';
-import FAQSection from './FAQSection'; // Import the FAQSection component
+import FAQSection from './FAQSection'; 
 import { Link } from 'react-router-dom'; 
 import {motion} from 'framer-motion';
-import {fadeIn} from '../../variant.js'
+
 
 
 
@@ -13,13 +13,16 @@ const About = () => {
   return (
     <>
       <div className="container my-5" id="about-container">
-        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="about-row">
-          <motion.div
-          variants={fadeIn("right",0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{once:false,amount:0.7}}
-          className="col-lg-7 p-3 p-lg-5 pt-lg-3" id="about-text">
+        <motion.div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="about-row"
+        initial={{ y: "2rem", opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                        duration: 2,
+                        type: "ease-in",
+                    }}>
+          <div className="col-lg-7 p-3 p-lg-5 pt-lg-3" id="about-text"
+          >
+          
             <h1 className="display-4 fw-light lh-1 text-body-emphasis" id="about-heading">
               Our Art Class is a Creative Centre, which is dedicated to teaching and involving learners.
             </h1>
@@ -39,15 +42,21 @@ const About = () => {
               </Link>
               
             </div>
-          </motion.div>
+          </div>
           <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg" id="about-image">
             <img className="rounded-lg-3" src={about_img} alt="Art Class" width="720" />
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Teacher Section */}
-      <div className="row p-4 mt-5 rounded-3 border shadow-lg" id="teacher-section">
+      <motion.div className="row p-4 mt-5 rounded-3 border shadow-lg" id="teacher-section"
+      initial={{ y: "2rem", opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                        duration: 2,
+                        type: "ease-in",
+                    }}>
         <div className="col-lg-4 p-0 overflow-hidden shadow-lg" id="teacher-image">
           <img className="rounded-lg-3" src={teacher} alt="Art Class Teacher" width="720" />
         </div>
@@ -65,10 +74,10 @@ const About = () => {
             <li><strong>Education:</strong> Scholar in Madhubani & Advanced Arts</li>
           </ul>
         </div>
-      </div>
+      </motion.div>
 
-      {/* FAQ Section */}
-      <FAQSection /> {/* Render the FAQ section */}
+     
+      <FAQSection /> 
     </>
   );
 };
